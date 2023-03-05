@@ -30,7 +30,7 @@ export async function strategy(
   }, [] as string[][]);
 
   // Stores all the retrieved balances
-  let balances: { [k: string]: number } = {};
+  const balances: { [k: string]: number } = {};
 
   for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
     const addressBatch = batches[batchIndex];
@@ -72,7 +72,7 @@ export async function strategy(
         return payload;
       }
     );
-    
+
     for (const payload of payloads) {
       if (payload.result === null) {
         break;
